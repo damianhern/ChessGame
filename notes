@@ -1,5 +1,9 @@
 move log (tracks a piece before and after like chess.com)
 highlight squares to show whre youre able to go
-if moving a piece endangers king, you are unable to move it????????? <<<< talk bout it
-we gotta learn techniques (castling, being able to swap position of kind and rook, apo ssant or something like that.)
+if moving a piece endangers king, you are unable to move it????????? <<<< king safety optional feature
+we gotta learn techniques (castling, being able to swap position of king and rook, en passant or something like that.)
 main menu with options for online, local.
+timer and being able to select how mulch
+undo button
+color select at beginning
+premoves
