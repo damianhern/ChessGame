@@ -59,9 +59,23 @@ for(var i = 0; i < 64; i++){
 chessBoard.addEventListener('click', function(){
  console.log('working');
 })
- // arrays are both same it goes pawn,rook,bishop,king,knight,queen
 
-/* const  blackPieces= [];
+
+ctx.drawImage(img,this.x, this.y, this.width, this.height);
+
+
+
+
+
+
+
+
+
+
+
+
+// arrays are both same it goes pawn,rook,bishop,king,knight,queen
+ const  blackPieces= [];
 const BP = new Image();
 BP.src ='BP.png';
 blackPieces.push(BP);
@@ -101,4 +115,5 @@ blackPieces.push(WN);
 const WQ = new Image();
 WQ.src ='WQ.png';
 blackPieces.push(WQ);
-*/
+
+
