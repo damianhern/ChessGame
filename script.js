@@ -61,19 +61,6 @@ chessBoard.addEventListener('click', function(){
 })
 
 
-ctx.drawImage(img,this.x, this.y, this.width, this.height);
-
-
-
-
-
-
-
-
-
-
-
-
 // arrays are both same it goes pawn,rook,bishop,king,knight,queen
  const  blackPieces= [];
 const BP = new Image();
