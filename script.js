@@ -59,48 +59,67 @@ for(var i = 0; i < 64; i++){
 chessBoard.addEventListener('click', function(){
  console.log('working');
 })
+a1.innerText = "a1";
+a2.innerText = "2";
+a3.innerText = "3";
+a4.innerText = "4";
+a5.innerText = "5";
+a6.innerText = "6";
+a7.innerText = "7";
+a8.innerText = "8";
+b1.innerText = "b";
+c1.innerText = "c";
+d1.innerText = "d";
+e1.innerText = "e";
+f1.innerText = "f";
+g1.innerText = "g";
+h1.innerText = "h";
+
 
 
 // arrays are both same it goes pawn,rook,bishop,king,knight,queen
  const  blackPieces= [];
-const BP = new Image();
-BP.src ='BP.png';
-blackPieces.push(BP);
-const BR = new Image();
-BR.src ='BR.png';
-blackPieces.push(BR);
-const BB = new Image();
-BB.src ='BB.png';
-blackPieces.push(BB);
-const BK = new Image();
-BK.src ='BK.png';
-blackPieces.push(BK);
-const BN = new Image();
-BN.src ='BN.png';
-blackPieces.push(BN);
-const BQ = new Image();
-BQ.src ='BQ.png';
-blackPieces.push(BQ);
+const bpawn = new Image();
+bpawn.src ='assets/black/bpawn.png';
+blackPieces.push(bpawn);
+const brook = new Image();
+brook.src ='assets/black/brook.png';
+blackPieces.push(brook);
+const bbishop = new Image();
+bbishop.src ='assets/black/bbishop.png';
+blackPieces.push(bbishop);
+const bking = new Image();
+bking.src ='assets/black/bking.png';
+blackPieces.push(bking);
+const bknight = new Image();
+bknight.src ='assets/black/bknight.png';
+blackPieces.push(bknight);
+const bqueen = new Image();
+bqueen.src ='assets/black/bqueen.png';
+blackPieces.push(bqueen);
 
 
 const  whitePieces= [];
-const WP = new Image();
-WP.src ='WP.png';
-blackPieces.push(WP);
-const WR = new Image();
-WR.src ='WR.png';
-blackPieces.push(WR);
-const WB = new Image();
-WB.src ='WB.png';
-blackPieces.push(WB);
-const WK = new Image();
-WK.src ='WK.png';
-blackPieces.push(WK);
-const WN = new Image();
-WN.src ='WN.png';
-blackPieces.push(WN);
-const WQ = new Image();
-WQ.src ='WQ.png';
-blackPieces.push(WQ);
+const wpawn = new Image();
+wpawn.src ='assets/white/wpawn.png';
+blackPieces.push(wpawn);
+const wrook = new Image();
+wrook.src ='assets/white/wrook.png';
+blackPieces.push(wrook);
+const wbishop = new Image();
+wbishop.src ='assets/white/wbishop.png';
+blackPieces.push(wbishop);
+const wking = new Image();
+wking.src ='assets/white/wking.png';
+blackPieces.push(wking);
+const wknight = new Image();
+wknight.src ='assets/white/wknight.png';
+blackPieces.push(wknight);
+const wqueen = new Image();
+wqueen.src ='assets/white/wqueen.png';
+blackPieces.push(wqueen);
 
 
+function reset(){
+    console.log('working');
+}
