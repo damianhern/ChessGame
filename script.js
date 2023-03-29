@@ -1,4 +1,5 @@
 var chessBoard = document.createElement('div');
+
 chessBoard.classList.add("chess-board");
 chessBoard.id = 'chessBoard';
 document.body.appendChild(chessBoard);
@@ -120,6 +121,53 @@ wqueen.src ='assets/white/wqueen.png';
 blackPieces.push(wqueen);
 
 
+var timeLimit = 900000;
+var timePassed = 0;
+var timerInterval = setInterval(updateTimer, 1000);
+
+function updateTimer(){
+    
+    timePassed += 1000;
+    var timeLeft = timeLimit - timePassed;
+
+    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("timerP1").innerText =  minutes + "m " + seconds + "s ";
+    document.getElementById("timerP2").innerText =  minutes + "m " + seconds + "s ";
+    
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      document.getElementById("timerP1").innerText = "EXPIRED";
+      document.getElementById("timerP2").innerText = "EXPIRED";
+      alert("Times UP!!");
+    }
+}
+
+optionSelect.addEventListener("change", (event) => {
+    event.target.value
+});
+
+optionSelect.addEventListener("change", myFunction);
+
+function myFunction(event){
+    timer = parseInt(event.target.value);
+}
+
+
+
+
 function reset(){
     console.log('working');
+}
+function tenMin(){
+   timeLimit = 600000;
+   var timerInterval = setInterval(updateTimer, 1000);
+}
+function fifteenMin(){
+   timeLimit = 900000;
+   var timerInterval = setInterval(updateTimer, 1000);
+}
+function unlimited(){
+    clearInterval(timerInterval);
 }
