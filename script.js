@@ -9,6 +9,7 @@ let Column = 'a';
 for(var i = 0; i < 64; i++){
     var square = document.createElement('div');
     square.classList.add("square");
+
    
     if (i == 8) {
      Row = 2;
@@ -162,11 +163,9 @@ function reset(){
 }
 function tenMin(){
    timeLimit = 600000;
-   var timerInterval = setInterval(updateTimer, 1000);
 }
 function fifteenMin(){
    timeLimit = 900000;
-   var timerInterval = setInterval(updateTimer, 1000);
 }
 function unlimited(){
     clearInterval(timerInterval);
