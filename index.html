@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-<!--
+        <!--
         <img id="BB" src="BB.png" alt="BB" height="0px" width="0px">
         <img id="BK" src="BK.jpg" alt="BK" height="0px" width="0px">
         <img id="BN" src="BN.png" alt="BN" height="0px" width="0px">
@@ -36,24 +37,28 @@
 
 
 -->
+        <div id="timerBox">
+                <div id="timerP1">Timer 1</div>
+                <div id="timerP2">Timer 2 </div>
+        </div>
 
 
-<div id="timerBox">
-        <div id="timerP1">Timer 1</div>
-        <div id="timerP2">Timer 2 </div>
+<div id="buttonBox">
+         <button onclick="tenMin()">Ten Minutes</button>
+        <button onclick="fifteenMin()">Fifteen Minutes</button>
+                <button onclick="unlimited()">unlimited</button>
+                <button onclick="reset()">Reset</button>
+        </div>
+
+
+<div id="gameContainer">
+        <div id="moveTraceBox">
+                <h1>Moves</h1>
+        </div>
+
+        <div id="chessBoard"></div>
 </div>
-
-
-<button onclick="tenMin()">Ten Minutes</button>
-<button onclick="fifteenMin()">Fifteen Minutes</button>
-<button onclick="unlimited()">unlimited</button>
-<button onclick="reset()" >Reset</button>
-
-<script src="script.js"></script>
-
-
-
-
 </body>
+<script src="script.js"></script>
 
 </html>

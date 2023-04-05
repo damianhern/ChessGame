@@ -1,8 +1,3 @@
-var chessBoard = document.createElement('div');
-
-chessBoard.classList.add("chess-board");
-chessBoard.id = 'chessBoard';
-document.body.appendChild(chessBoard);
 var b  = true;
 let Row = 1;
 let Column = 'a';
@@ -60,7 +55,11 @@ for(var i = 0; i < 64; i++){
 
 chessBoard.addEventListener('click', function(){
  console.log('working');
+
 })
+
+
+
 a1.innerText = "a1";
 a2.innerText = "2";
 a3.innerText = "3";
@@ -122,6 +121,8 @@ wqueen.src ='assets/white/wqueen.png';
 blackPieces.push(wqueen);
 
 
+
+
 var timeLimit = 900000;
 var timePassed = 0;
 var timerInterval = setInterval(updateTimer, 1000);
@@ -145,21 +146,11 @@ function updateTimer(){
     }
 }
 
-optionSelect.addEventListener("change", (event) => {
-    event.target.value
-});
-
-optionSelect.addEventListener("change", myFunction);
-
-function myFunction(event){
-    timer = parseInt(event.target.value);
-}
-
 
 
 
 function reset(){
-    console.log('working');
+   console.log("Reset button working");
 }
 function tenMin(){
    timeLimit = 600000;
