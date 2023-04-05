@@ -149,15 +149,29 @@ function updateTimer(){
 
 
 
+function minutesToMiliSeconds(minutes){
+    var num = minutes * 60;
+    num *= 1000;
+    return num;
+}
 function reset(){
-   console.log("Reset button working");
+    console.log(workingheeheheheh);
 }
 function tenMin(){
-   timeLimit = 600000;
+    timeLimit = 600000;
+    timerStartValue = 600000;
+   
 }
 function fifteenMin(){
    timeLimit = 900000;
+
 }
 function unlimited(){
     clearInterval(timerInterval);
+}
+function custom(){
+    num = prompt("How many minutes?");
+    minutes = parseInt(num)
+    finalMinutes = minutesToMiliSeconds(minutes);
+    timeLimit = finalMinutes;
 }
