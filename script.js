@@ -40,7 +40,6 @@ for(var i = 0; i < 64; i++){
           Column  = 'a';
        }
     square.id = Column + Row;
-    console.log(square.id);
     if(b){
         square.classList.add("light-bg");
     } else{
@@ -60,6 +59,50 @@ chessBoard.addEventListener('click', function(){
 
 
 
+// arrays are both same it goes pawn,rook,bishop,king,knight,queen
+const  addedBlackPieces= [];
+const blackPiece = new Map();
+const bpawn = new Image();
+bpawn.src ='assets/black/bpawn.png';
+blackPiece.set('bpawn',bpawn);
+const brook = new Image();
+brook.src ='assets/black/brook.png';
+blackPiece.set('brook',brook);
+const bbishop = new Image();
+bbishop.src ='assets/black/bbishop.png';
+blackPiece.set('bbishop',bbishop);
+const bking = new Image();
+bking.src ='assets/black/bking.png';
+blackPiece.set('bking',bking);
+const bknight = new Image();
+bknight.src ='assets/black/bknight.png';
+blackPiece.set('bknight',bknight);
+const bqueen = new Image();
+bqueen.src ='assets/black/bqueen.png';
+blackPiece.set('bqueen',bqueen);
+
+const  addedWhitePieces= [];
+const  whitePiece = new Map();
+const wpawn = new Image();
+wpawn.src ='assets/white/wpawn.png';
+whitePiece.set('wpawn',wpawn);
+const wrook = new Image();
+wrook.src ='assets/white/wrook.png';
+whitePiece.set('wrook',wrook);
+const wbishop = new Image();
+wbishop.src ='assets/white/wbishop.png';
+whitePiece.set('wbishop',wbishop);
+const wking = new Image();
+wking.src ='assets/white/wking.png';
+whitePiece.set('wking',wking);
+const wknight = new Image();
+wknight.src ='assets/white/wknight.png';
+whitePiece.set('wknight',wknight);
+const wqueen = new Image();
+wqueen.src ='assets/white/wqueen.png';
+whitePiece.set('wqueen',wqueen);
+
+
 a1.innerText = "a1";
 a2.innerText = "2";
 a3.innerText = "3";
@@ -75,50 +118,33 @@ e1.innerText = "e";
 f1.innerText = "f";
 g1.innerText = "g";
 h1.innerText = "h";
+function setupBoard(){
+  
+  
+    for(var i = 0; i < 33; i++){
+        let name = "wpawn"+i;
+        name = whitePiece.get('wpawn'); 
+        console.log(name);
 
+    }
 
+//white special pieces    
 
-// arrays are both same it goes pawn,rook,bishop,king,knight,queen
- const  blackPieces= [];
-const bpawn = new Image();
-bpawn.src ='assets/black/bpawn.png';
-blackPieces.push(bpawn);
-const brook = new Image();
-brook.src ='assets/black/brook.png';
-blackPieces.push(brook);
-const bbishop = new Image();
-bbishop.src ='assets/black/bbishop.png';
-blackPieces.push(bbishop);
-const bking = new Image();
-bking.src ='assets/black/bking.png';
-blackPieces.push(bking);
-const bknight = new Image();
-bknight.src ='assets/black/bknight.png';
-blackPieces.push(bknight);
-const bqueen = new Image();
-bqueen.src ='assets/black/bqueen.png';
-blackPieces.push(bqueen);
+//white pawns
 
+//black special pieces 
 
-const  whitePieces= [];
-const wpawn = new Image();
-wpawn.src ='assets/white/wpawn.png';
-blackPieces.push(wpawn);
-const wrook = new Image();
-wrook.src ='assets/white/wrook.png';
-blackPieces.push(wrook);
-const wbishop = new Image();
-wbishop.src ='assets/white/wbishop.png';
-blackPieces.push(wbishop);
-const wking = new Image();
-wking.src ='assets/white/wking.png';
-blackPieces.push(wking);
-const wknight = new Image();
-wknight.src ='assets/white/wknight.png';
-blackPieces.push(wknight);
-const wqueen = new Image();
-wqueen.src ='assets/white/wqueen.png';
-blackPieces.push(wqueen);
+//black pawns 
+
+}
+
+let bpawn2 = blackPiece.get('bpawn');
+a1.appendChild(bpawn2);
+b1.appendChild(wknight);
+c1.appendChild(wbishop);
+d1.appendChild(wqueen);
+e1.appendChild(wking);
+h1.appendChild(wrook);
 
 
 
@@ -155,7 +181,7 @@ function minutesToMiliSeconds(minutes){
     return num;
 }
 function reset(){
-    console.log(workingheeheheheh);
+   setupBoard();
 }
 function tenMin(){
     timeLimit = 600000;

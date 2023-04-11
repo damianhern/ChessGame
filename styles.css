@@ -5,8 +5,8 @@ body{
 
 
 #chessBoard {
-width : 800px;
-height : 800px;
+width : 900px;
+height : 900px;
 display : flex;
 flex-Wrap : wrap-reverse;
 margin-left: 12.5%;
@@ -14,8 +14,9 @@ margin-left: 12.5%;
 
 
 .square {
-    width: 100px;
-    height: 100px;
+    width: 112.5px;
+    height: 112.5px;
+    position: relative;
   }
 
 .light-bg {
@@ -35,12 +36,14 @@ margin-left: 12.5%;
   #a1,#a3,#a5,#a7,#c1,#e1,#g1{
   font-size: 250%;
   color:blanchedalmond;
+  position: relative;
   
   }
 
   #a2,#a4,#a6,#a8,#b1,#d1,#f1,#h1{
     font-size: 250%;
     color:burlywood;
+    position: relative;
     }
   
 button{
@@ -93,7 +96,7 @@ button:hover{
     display: flex;
     flex-direction: row;
     width: 50%;
-    padding-bottom: 5%;
+    padding-bottom: 2.5%;
     padding-top: 2.5%;
     margin-left: auto;
     margin: auto;
@@ -120,3 +123,10 @@ button:hover{
   flex-direction:row;
 }
 
+.chessPieces{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left:13%;
+  bottom:1%;
+}
