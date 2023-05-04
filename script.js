@@ -1,106 +1,64 @@
-var b  = true;
+var b = true;
 let Row = 1;
 let Column = 'a';
-for(var i = 0; i < 64; i++){
+for (var i = 0; i < 64; i++) {
     var square = document.createElement('div');
     square.classList.add("square");
 
-   
+
     if (i == 8) {
-     Row = 2;
+        Row = 2;
     } else if (i == 16) {
         Row = 3;
     } else if (i == 24) {
         Row = 4;
     } else if (i == 32) {
         Row = 5;
-    } else if (i == 40){
+    } else if (i == 40) {
         Row = 6;
     } else if (i == 48) {
         Row = 7;
     } else if (i == 56) {
         Row = 8;
-    } 
+    }
 
     if (i == 1 || i == 9 || i == 17 || i == 25 || i == 33 || i == 41 || i == 49 || i == 57) {
         Column = 'b';
-       } else if (i == 2 || i == 10 || i == 18 || i == 26 || i == 34|| i == 42 || i == 50 || i == 58) {
-           Column = 'c';
-       } else if (i == 3 || i == 11 || i == 19 || i == 27 || i == 35 || i == 43 || i == 51 || i == 59) {
-           Column = 'd';
-       } else if (i == 4 || i == 12 || i == 20 || i == 28 || i == 36 || i == 44 || i == 52 || i == 60) {
-           Column = 'e';
-       } else if (i == 5 || i == 13 || i == 21 || i == 29 || i == 37 || i == 45 || i == 53 || i == 61){
-           Column = 'f';
-       } else if (i == 6 || i == 14 || i == 22 || i == 30 || i == 38 || i == 46 || i == 54 || i == 62) {
-           Column = 'g';
-       } else if (i == 7 || i == 15 || i == 23 || i == 31 || i == 39 || i == 47 || i == 55|| i == 63) {
-           Column = 'h';
-       } else {
-          Column  = 'a';
-       }
+    } else if (i == 2 || i == 10 || i == 18 || i == 26 || i == 34 || i == 42 || i == 50 || i == 58) {
+        Column = 'c';
+    } else if (i == 3 || i == 11 || i == 19 || i == 27 || i == 35 || i == 43 || i == 51 || i == 59) {
+        Column = 'd';
+    } else if (i == 4 || i == 12 || i == 20 || i == 28 || i == 36 || i == 44 || i == 52 || i == 60) {
+        Column = 'e';
+    } else if (i == 5 || i == 13 || i == 21 || i == 29 || i == 37 || i == 45 || i == 53 || i == 61) {
+        Column = 'f';
+    } else if (i == 6 || i == 14 || i == 22 || i == 30 || i == 38 || i == 46 || i == 54 || i == 62) {
+        Column = 'g';
+    } else if (i == 7 || i == 15 || i == 23 || i == 31 || i == 39 || i == 47 || i == 55 || i == 63) {
+        Column = 'h';
+    } else {
+        Column = 'a';
+    }
     square.id = Column + Row;
-    if(b){
+    if (b) {
         square.classList.add("light-bg");
-    } else{
+    } else {
         square.classList.add("dark-bg");
     }
     b = !b;
-    if((i + 1) % 8 == 0){
+    if ((i + 1) % 8 == 0) {
         b = !b;
     }
     chessBoard.appendChild(square);
 }
 
-chessBoard.addEventListener('click', function(){
- console.log('working');
+chessBoard.addEventListener('click', function () {
+    console.log('working');
 
 })
 
 
 
-// arrays are both same it goes pawn,rook,bishop,king,knight,queen
-const  addedBlackPieces= [];
-const blackPiece = new Map();
-const bpawn = new Image();
-bpawn.src ='assets/black/bpawn.png';
-blackPiece.set('bpawn',bpawn);
-const brook = new Image();
-brook.src ='assets/black/brook.png';
-blackPiece.set('brook',brook);
-const bbishop = new Image();
-bbishop.src ='assets/black/bbishop.png';
-blackPiece.set('bbishop',bbishop);
-const bking = new Image();
-bking.src ='assets/black/bking.png';
-blackPiece.set('bking',bking);
-const bknight = new Image();
-bknight.src ='assets/black/bknight.png';
-blackPiece.set('bknight',bknight);
-const bqueen = new Image();
-bqueen.src ='assets/black/bqueen.png';
-blackPiece.set('bqueen',bqueen);
-
-const  addedWhitePieces= [];
-const  whitePiece = new Map();
-const wpawn = new Image();
-wpawn.src ='assets/white/wpawn.png';
-whitePiece.set('wpawn',wpawn);
-const wrook = new Image();
-wrook.src ='assets/white/wrook.png';
-whitePiece.set('wrook',wrook);
-const wbishop = new Image();
-wbishop.src ='assets/white/wbishop.png';
-whitePiece.set('wbishop',wbishop);
-const wking = new Image();
-wking.src ='assets/white/wking.png';
-whitePiece.set('wking',wking);
-const wknight = new Image();
-wknight.src ='assets/white/wknight.png';
-whitePiece.set('wknight',wknight);
-const wqueen = new Image();
-wqueen.src ='assets/white/wqueen.png';
-whitePiece.set('wqueen',wqueen);
 
 
 a1.innerText = "a1";
@@ -118,34 +76,324 @@ e1.innerText = "e";
 f1.innerText = "f";
 g1.innerText = "g";
 h1.innerText = "h";
-function setupBoard(){
-  
-  
-    for(var i = 0; i < 33; i++){
-        let name = "wpawn"+i;
-        name = whitePiece.get('wpawn'); 
-        console.log(name);
+function setupBoard() {
+    const whitePiece = new Map();
+    const blackPiece = new Map();
 
+
+    const brook1 = new Image();
+    brook1.src = 'assets/black/brook.png';
+    brook1.id = 'brook1';
+    brook1.classList.add('chessPieces'); -
+        blackPiece.set('brook1', brook1);
+    const brook2 = new Image();
+    brook2.src = 'assets/black/brook.png';
+    brook2.id = 'brook2';
+    brook2.classList.add('chessPieces');
+    blackPiece.set('brook2', brook2);
+
+    const bbishop1 = new Image();
+    bbishop1.src = 'assets/black/bbishop.png';
+    bbishop1.id = 'bbishop1';
+    bbishop1.classList.add('chessPieces');
+    blackPiece.set('bbishop1', bbishop1);
+    const bbishop2 = new Image();
+    bbishop2.src = 'assets/black/bbishop.png';
+    bbishop2.id = 'bbishop2';
+    bbishop2.classList.add('chessPieces');
+    blackPiece.set('bbishop2', bbishop2);
+
+
+    const bking1 = new Image();
+    bking1.src = 'assets/black/bking.png';
+    bking1.id = 'bking1';
+    bking1.classList.add('chessPieces');
+    blackPiece.set('bking1', bking1);
+
+    const bknight1 = new Image();
+    bknight1.src = 'assets/black/bknight.png';
+    bknight1.id = 'bknight1';
+    bknight1.classList.add('chessPieces');
+    blackPiece.set('bknight1', bknight1);
+    const bknight2 = new Image();
+    bknight2.src = 'assets/black/bknight.png';
+    bknight2.id = 'bknight2';
+    bknight2.classList.add('chessPieces');
+    blackPiece.set('bknight2', bknight2);
+
+    const bqueen1 = new Image();
+    bqueen1.src = 'assets/black/bqueen.png';
+    bqueen1.id = 'bqueen1';
+    bqueen1.classList.add('chessPieces');
+    blackPiece.set('bqueen1', bqueen1);
+
+    const bpawn1 = new Image();
+    bpawn1.src = "assets/black/bpawn.png";
+    bpawn1.id = 'bpawn1';
+    bpawn1.classList.add('chessPieces');
+    blackPiece.set('bpawn1', bpawn1);
+    const bpawn2 = new Image();
+    bpawn2.src = "assets/black/bpawn.png";
+    bpawn2.id = 'bpawn2';
+    bpawn2.classList.add('chessPieces');
+    blackPiece.set('bpawn2', bpawn2);
+    const bpawn3 = new Image();
+    bpawn3.src = "assets/black/bpawn.png";
+    bpawn3.id = 'bpawn3';
+    bpawn3.classList.add('chessPieces');
+    blackPiece.set('bpawn3', bpawn3);
+    const bpawn4 = new Image();
+    bpawn4.src = "assets/black/bpawn.png";
+    bpawn4.id = 'bpawn4';
+    bpawn4.classList.add('chessPieces');
+    blackPiece.set('bpawn4', bpawn4);
+    const bpawn5 = new Image();
+    bpawn5.src = "assets/black/bpawn.png";
+    bpawn5.id = 'bpawn5';
+    bpawn5.classList.add('chessPieces');
+    blackPiece.set('bpawn5', bpawn5);
+    const bpawn6 = new Image();
+    bpawn6.src = "assets/black/bpawn.png";
+    bpawn6.id = 'bpawn6';
+    bpawn6.classList.add('chessPieces');
+    blackPiece.set('bpawn6', bpawn6);
+    const bpawn7 = new Image();
+    bpawn7.src = "assets/black/bpawn.png";
+    bpawn7.id = 'bpawn7';
+    bpawn7.classList.add('chessPieces');
+    blackPiece.set('bpawn7', bpawn7);
+    const bpawn8 = new Image();
+    bpawn8.src = "assets/black/bpawn.png";
+    bpawn8.id = 'bpawn8';
+    bpawn8.classList.add('chessPieces');
+    blackPiece.set('bpawn8', bpawn8);
+
+
+    //White Pieces 
+
+    const wrook1 = new Image();
+    wrook1.src = 'assets/white/wrook.png';
+    wrook1.classList.add('chessPieces');
+    wrook1.id = 'wrook1';
+    whitePiece.set('wrook1', wrook1);
+    const wrook2 = new Image();
+    wrook2.src = 'assets/white/wrook.png';
+    wrook2.id = 'wrook2';
+    whitePiece.set('wrook2', wrook2);
+    wrook2.classList.add('chessPieces');
+
+    const wbishop1 = new Image();
+    wbishop1.src = 'assets/white/wbishop.png';
+    wbishop1.id = 'wbishop1';
+    wbishop1.classList.add('chessPieces');
+    whitePiece.set('wbishop1', wbishop1);
+    const wbishop2 = new Image();
+    wbishop2.src = 'assets/white/wbishop.png';
+    wbishop2.id = 'wbishop2';
+    wbishop2.classList.add('chessPieces');
+    whitePiece.set('wbishop2', wbishop2);
+
+
+    const wknight1 = new Image();
+    wknight1.src = 'assets/white/wknight.png';
+    wknight1.id = 'wknight1';
+    wknight1.classList.add('chessPieces');
+    whitePiece.set('wknight1', wknight1);
+    const wknight2 = new Image();
+    wknight2.src = 'assets/white/wknight.png';
+    whitePiece.set('wknight2', wknight2);
+    wknight2.classList.add('chessPieces');
+
+    const wqueen1 = new Image();
+    wqueen1.src = 'assets/white/wqueen.png';
+    whitePiece.set('wqueen1', wqueen1);
+    wqueen1.id = 'wqueen1';
+    wqueen1.classList.add('chessPieces');
+
+    const wking1 = new Image();
+    wking1.src = 'assets/white/wking.png';
+    whitePiece.set('wking1', wking1);
+    wking1.id = 'wking1';
+    wking1.classList.add('chessPieces');
+
+    const wpawn1 = new Image();
+    wpawn1.src = 'assets/white/wpawn.png';
+    wpawn1.classList.add('chessPieces');
+    wpawn1.id = 'wpawn1';
+    console.log(wpawn1.id);
+    whitePiece.set('wpawn1', wpawn1);
+    const wpawn2 = new Image();
+    wpawn2.src = 'assets/white/wpawn.png';
+    wpawn2.classList.add('chessPieces');
+    wpawn2.id = 'wpawn2';
+    whitePiece.set('wpawn2', wpawn2);
+    const wpawn3 = new Image();
+    wpawn3.src = 'assets/white/wpawn.png';
+    wpawn3.classList.add('chessPieces');
+    wpawn3.id = 'wpawn3';
+    whitePiece.set('wpawn3', wpawn3);
+    const wpawn4 = new Image();
+    wpawn4.src = 'assets/white/wpawn.png';
+    wpawn4.classList.add('chessPieces');
+    wpawn4.id = 'wpawn4';
+    whitePiece.set('wpawn4', wpawn4);
+    const wpawn5 = new Image();
+    wpawn5.src = 'assets/white/wpawn.png';
+    wpawn5.classList.add('chessPieces');
+    wpawn5.id = 'wpawn5';
+    whitePiece.set('wpawn5', wpawn5);
+    const wpawn6 = new Image();
+    wpawn6.src = 'assets/white/wpawn.png';
+    wpawn6.classList.add('chessPieces');
+    wpawn6.id = 'wpawn6';
+    whitePiece.set('wpawn6', wpawn6);
+    const wpawn7 = new Image();
+    wpawn7.src = 'assets/white/wpawn.png';
+    wpawn7.classList.add('chessPieces');
+    wpawn7.id = 'wpawn7';
+    whitePiece.set('wpawn7', wpawn7);
+    const wpawn8 = new Image();
+    wpawn8.src = 'assets/white/wpawn.png';
+    wpawn8.classList.add('chessPieces');
+    wpawn8.id = 'wpawn8';
+    whitePiece.set('wpawn8', wpawn8);
+
+
+
+
+
+
+
+    //white special pieces    
+    let wtrook1 = whitePiece.get('wrook1');
+    let wtrook2 = whitePiece.get('wrook2');
+    let wtknight1 = whitePiece.get('wknight1');
+    let wtknight2 = whitePiece.get('wknight2');
+    let wtbishop1 = whitePiece.get('wbishop1');
+    let wtbishop2 = whitePiece.get('wbishop2');
+    let wtqueen1 = whitePiece.get('wqueen1');
+    let wtking1 = whitePiece.get('wking1');
+    //white pawns
+    let wtpawn1 = whitePiece.get('wpawn1');
+    let wtpawn2 = whitePiece.get('wpawn2');
+    let wtpawn3 = whitePiece.get('wpawn3');
+    let wtpawn4 = whitePiece.get('wpawn4');
+    let wtpawn5 = whitePiece.get('wpawn5');
+    let wtpawn6 = whitePiece.get('wpawn6');
+    let wtpawn7 = whitePiece.get('wpawn7');
+    let wtpawn8 = whitePiece.get('wpawn8');
+    //black special pieces 
+    let bkrook1 = blackPiece.get('brook1');
+    let bkrook2 = blackPiece.get('brook2');
+    let bkknight1 = blackPiece.get('bknight1');
+    let bkknight2 = blackPiece.get('bknight2');
+    let bkbishop1 = blackPiece.get('bbishop1');
+    let bkbishop2 = blackPiece.get('bbishop2');
+    let bkqueen1 = blackPiece.get('bqueen1');
+    let bkking1 = blackPiece.get('bking1');
+    //black pawns 
+    let bkpawn1 = blackPiece.get('bpawn1');
+    let bkpawn2 = blackPiece.get('bpawn2');
+    let bkpawn3 = blackPiece.get('bpawn3');
+    let bkpawn4 = blackPiece.get('bpawn4');
+    let bkpawn5 = blackPiece.get('bpawn5');
+    let bkpawn6 = blackPiece.get('bpawn6');
+    let bkpawn7 = blackPiece.get('bpawn7');
+    let bkpawn8 = blackPiece.get('bpawn8');
+
+
+    //whites Pawns being set 
+    a2.appendChild(wtpawn1);
+    b2.appendChild(wtpawn2);
+    c2.appendChild(wtpawn3);
+    d2.appendChild(wtpawn4);
+    e2.appendChild(wtpawn5);
+    f2.appendChild(wtpawn6);
+    g2.appendChild(wtpawn7);
+    h2.appendChild(wtpawn8);
+    //white special Pieces Being Set 
+    a1.appendChild(wtrook1);
+    b1.appendChild(wtknight1);
+    c1.appendChild(wtbishop1);
+    d1.appendChild(wtqueen1);
+    e1.appendChild(wtking1);
+    f1.appendChild(wtbishop2);
+    g1.appendChild(wtknight2);
+    h1.appendChild(wtrook2);
+    //black pawns being set
+    a7.appendChild(bkpawn1);
+    b7.appendChild(bkpawn2);
+    c7.appendChild(bkpawn3);
+    d7.appendChild(bkpawn4);
+    e7.appendChild(bkpawn5);
+    f7.appendChild(bkpawn6);
+    g7.appendChild(bkpawn7);
+    h7.appendChild(bkpawn8);
+    //black special pieces being set
+    a8.appendChild(bkrook1);
+    b8.appendChild(bkknight1);
+    c8.appendChild(bkbishop1);
+    d8.appendChild(bkqueen1);
+    e8.appendChild(bkking1);
+    f8.appendChild(bkbishop2);
+    g8.appendChild(bkknight2);
+    h8.appendChild(bkrook2);
+
+    /* events fired on the draggable target */
+    let pieces = document.getElementsByClassName("chessPieces");
+    let selectedPiece;
+    let hoveredTile;
+    for (piece of pieces) {
+
+        piece.addEventListener("drag", (event) => {
+            console.log("dragging");
+          });
+
+
+        piece.addEventListener("dragstart", (event) => {
+            selectedPiece = event.target;
+            console.log("dragstart");
+        });
+
+        piece.addEventListener("dragend", (event) => {
+            console.log("dragend");
+        });
     }
 
-//white special pieces    
+    let chessTiles = document.getElementsByClassName("square");
+    for ( const chessTile of chessTiles) {
 
-//white pawns
+        chessTile.addEventListener(
+            "dragover",
+            (event) => {
+              // prevent default to allow drop
+              event.preventDefault();
+            },
+            false
+          );
 
-//black special pieces 
+        chessTile.addEventListener("drop", (event) => {
 
-//black pawns 
+            event.preventDefault();
+            // move dragged element to the selected drop target
+       
+              chessTile.appendChild(selectedPiece);
+
+
+            console.log("drop");
+        });
+
+  
+        
+    }
+
+  
+
 
 }
 
-let bpawn2 = blackPiece.get('bpawn');
-a1.appendChild(bpawn2);
-b1.appendChild(wknight);
-c1.appendChild(wbishop);
-d1.appendChild(wqueen);
-e1.appendChild(wking);
-h1.appendChild(wrook);
 
+let dragged;
 
 
 
@@ -153,51 +401,64 @@ var timeLimit = 900000;
 var timePassed = 0;
 var timerInterval = setInterval(updateTimer, 1000);
 
-function updateTimer(){
-    
+function updateTimer() {
+
     timePassed += 1000;
     var timeLeft = timeLimit - timePassed;
 
     var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    document.getElementById("timerP1").innerText =  minutes + "m " + seconds + "s ";
-    document.getElementById("timerP2").innerText =  minutes + "m " + seconds + "s ";
-    
+
+
+
     if (timeLeft < 0) {
-      clearInterval(timerInterval);
-      document.getElementById("timerP1").innerText = "EXPIRED";
-      document.getElementById("timerP2").innerText = "EXPIRED";
-      alert("Times UP!!");
+        clearInterval(timerInterval);
+        document.getElementById("timerP1").innerText = "EXPIRED";
+        document.getElementById("timerP2").innerText = "EXPIRED";
+        timePassed = 0;
+        alert("Times UP!!");
+    } else {
+        document.getElementById("timerP1").innerText = minutes + "m " + seconds + "s ";
+        document.getElementById("timerP2").innerText = minutes + "m " + seconds + "s ";
+
     }
+
+
+
 }
 
 
 
 
-function minutesToMiliSeconds(minutes){
+function minutesToMiliSeconds(minutes) {
     var num = minutes * 60;
     num *= 1000;
     return num;
 }
-function reset(){
-   setupBoard();
+function reset() {
+    setupBoard();
 }
-function tenMin(){
+function tenMin() {
     timeLimit = 600000;
     timerStartValue = 600000;
-   
-}
-function fifteenMin(){
-   timeLimit = 900000;
+    timePassed = 0;
+
 
 }
-function unlimited(){
+function fifteenMin() {
+    timeLimit = 900000;
+    timePassed = 0;
+
+}
+function unlimited() {
     clearInterval(timerInterval);
 }
-function custom(){
+function custom() {
     num = prompt("How many minutes?");
     minutes = parseInt(num)
     finalMinutes = minutesToMiliSeconds(minutes);
     timeLimit = finalMinutes;
+    timePassed = 0;
 }
+

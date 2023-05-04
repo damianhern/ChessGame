@@ -1,6 +1,28 @@
 
 body{
     background-color: rgb(46, 46, 46);
+    user-select: none;
+}
+
+#draggable {
+  text-align: center;
+  background: white;
+}
+
+.dropzone {
+  width: 200px;
+  height: 20px;
+  background: blueviolet;
+  margin: 10px;
+  padding: 10px;
+}
+
+.dropzone.dragover {
+  background-color: purple;
+}
+
+.dragging {
+  opacity: 0.5;
 }
 
 
@@ -109,15 +131,23 @@ button:hover{
   border-radius: 15px;
   border-color: burlywood;
   width: 15%;
-  height: 800px;
+  height: fit-content;
   margin-left: 3%;
   background-color: rgb(56, 56, 56);
   color: white;
   padding-left: 20px;
   padding-right: 20px;
 }
+#moveTraceboxTitle{
+margin-left: 28%;
+}
 
-
+#movesInTraceBox{
+  font-size: large;
+  display: flex;
+  max-width: fit-content;
+  flex-wrap: wrap;
+}
 #gameContainer{
   display: flex;
   flex-direction:row;
@@ -129,4 +159,5 @@ button:hover{
   width: 100px;
   left:13%;
   bottom:1%;
+  
 }
