@@ -52,10 +52,6 @@ for (var i = 0; i < 64; i++) {
     chessBoard.appendChild(square);
 }
 
-chessBoard.addEventListener('click', function () {
-    console.log('working');
-
-})
 
 
 
@@ -201,6 +197,7 @@ function setupBoard() {
     whitePiece.set('wknight1', wknight1);
     const wknight2 = new Image();
     wknight2.src = 'assets/white/wknight.png';
+    wknight2.id = 'wknight2';
     whitePiece.set('wknight2', wknight2);
     wknight2.classList.add('chessPieces');
 
@@ -254,8 +251,8 @@ function setupBoard() {
     whitePiece.set('wpawn7', wpawn7);
     const wpawn8 = new Image();
     wpawn8.src = 'assets/white/wpawn.png';
-    wpawn8.classList.add('chessPieces');
     wpawn8.id = 'wpawn8';
+    wpawn8.classList.add('chessPieces');
     whitePiece.set('wpawn8', wpawn8);
 
 
@@ -342,12 +339,11 @@ function setupBoard() {
     /* events fired on the draggable target */
     let pieces = document.getElementsByClassName("chessPieces");
     let selectedPiece;
-    let hoveredTile;
     for (piece of pieces) {
 
         piece.addEventListener("drag", (event) => {
             console.log("dragging");
-          });
+        });
 
 
         piece.addEventListener("dragstart", (event) => {
@@ -361,45 +357,74 @@ function setupBoard() {
     }
 
     let chessTiles = document.getElementsByClassName("square");
-    for ( const chessTile of chessTiles) {
+    for (const chessTile of chessTiles) {
 
         chessTile.addEventListener(
             "dragover",
             (event) => {
-              // prevent default to allow drop
-              event.preventDefault();
+                // prevent default to allow drop
+                event.preventDefault();
             },
             false
-          );
+        );
+
+        chessTile.addEventListener("dragenter", (event) => {
+            // highlight potential drop target when the draggable element enters it
+              chessTile.classList.add("dragover");
+          });
+          
+          chessTile.addEventListener("dragleave", (event) => {
+            // reset background of potential drop target when the draggable element leaves it
+              chessTile.classList.remove("dragover");
+          });
+
+
 
         chessTile.addEventListener("drop", (event) => {
 
             event.preventDefault();
             // move dragged element to the selected drop target
-       
-              chessTile.appendChild(selectedPiece);
-
-
+         
+            chessTile.appendChild(selectedPiece);
+            var movesTraceBox = document.getElementById('movesTraceBox');
+            //movesTraceBox.innerHTML = movesTraceBox.innerHTML + ',' +  selectedPiece.id + chessTile.id;
+            let h2 = document.createElement("h2");
+            h2.innerHTML = selectedPiece.id + " to " + chessTile.id;
+            movesTraceBox.appendChild(h2);
+            if (chessTile.children.length > 1) {
+                chessTile.children[0].remove();
+            }
+            chessTile.classList.remove("dragover");
             console.log("drop");
         });
-
-  
         
+        chessTile.addEventListener('dblclick', function () {
+            if(chessTile.classList.contains("priotize")){
+                chessTile.classList.remove("priotize");
+            }else{
+            chessTile.classList.add("priotize");
+            }
+            
+        
+        })
+        
+   
+
     }
 
-  
+
 
 
 }
 
 
-let dragged;
+
 
 
 
 var timeLimit = 900000;
 var timePassed = 0;
-var timerInterval = setInterval(updateTimer, 1000);
+
 
 function updateTimer() {
 
@@ -431,24 +456,60 @@ function updateTimer() {
 
 
 
+let playerTurn = 2;
+window.addEventListener('keypress', event => {
+    if (event.keyCode === 32) {
+        if(playerTurn == 2){
+            playerTurn = 1;
+        }else{
+            playerTurn = 2 ;
+        }
+        console.log(playerTurn);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function minutesToMiliSeconds(minutes) {
     var num = minutes * 60;
     num *= 1000;
     return num;
 }
+var timesClicked = 0;
 function reset() {
-    setupBoard();
+    if (timesClicked == 0){
+        setupBoard(); 
+    }else{ alert('clicked Too many Times Try Reloading Window The click Reset Board!');}
+
+    timesClicked +=1;
+    
+   
 }
 function tenMin() {
     timeLimit = 600000;
     timerStartValue = 600000;
     timePassed = 0;
+    timerInterval = setInterval(updateTimer, 1000);
 
 
 }
 function fifteenMin() {
     timeLimit = 900000;
     timePassed = 0;
+    timerInterval = setInterval(updateTimer, 1000);
 
 }
 function unlimited() {
@@ -460,5 +521,6 @@ function custom() {
     finalMinutes = minutesToMiliSeconds(minutes);
     timeLimit = finalMinutes;
     timePassed = 0;
+    timerInterval = setInterval(updateTimer, 1000);
 }
 
