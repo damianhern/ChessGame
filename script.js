@@ -1,6 +1,7 @@
 var b = true;
 let Row = 1;
 let Column = 'a';
+var timerInterval = null;
 for (var i = 0; i < 64; i++) {
     var square = document.createElement('div');
     square.classList.add("square");
@@ -78,7 +79,7 @@ window.addEventListener('keypress', event => {
     if (event.keyCode === 32) {
         if (playerTurn == 2) {
             playerTurn = 1;
-           
+        
         } else {
             playerTurn = 2;
            
@@ -375,7 +376,7 @@ function setupBoard() {
 
             console.log("dragstart");
             console.log(selectedPiece.id);
-            if (selectedPiece == wking) {
+           /* if (selectedPiece == wking) {
                 // separate letter from number into two variables
                 const text = selectedPiece.parentElement.id;
                 const myArray = text.split("");
@@ -413,7 +414,7 @@ function setupBoard() {
                 console.log("king not selected ");
             }
 
-
+*/
 
 
 
@@ -618,8 +619,9 @@ function minutesToMiliSeconds(minutes) {
     num *= 1000;
     return num;
 }
-var timesClicked = 0;
+
 function reset() {
+    var timesClicked = 0;
     if (timesClicked == 0) {
         setupBoard();
     } else { alert('clicked Too many Times Try Reloading Window The click Reset Board!'); }
@@ -629,18 +631,27 @@ function reset() {
 
 }
 function tenMin() {
+    
     timeLimit = 600000;
     timerStartValue = 600000;
     timePassedP1 = 0;
     timePassedP2 = 0;
+    if(timerInterval != null){
+    clearInterval(timerInterval);
+    }
     timerInterval = setInterval(updateTimer, 1000);
+
 
 
 }
 function fifteenMin() {
     timeLimit = 900000;
+    timerStartValue = 900000;
     timePassedP1 = 0;
     timePassedP2 = 0;
+    if(timerInterval != null){
+        clearInterval(timerInterval);
+        }
     timerInterval = setInterval(updateTimer, 1000);
 
 }
@@ -652,8 +663,12 @@ function custom() {
     minutes = parseInt(num)
     finalMinutes = minutesToMiliSeconds(minutes);
     timeLimit = finalMinutes;
+    timerStartValue = finalMinutes;
     timePassedP1 = 0;
     timePassedP2 = 0;
+    if(timerInterval != null){
+        clearInterval(timerInterval);
+        }
     timerInterval = setInterval(updateTimer, 1000);
 }
 
