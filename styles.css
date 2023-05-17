@@ -1,76 +1,68 @@
-
-body{
-    background-color: rgb(46, 46, 46);
-    user-select: none;
+body {
+  background-color: rgb(46, 46, 46);
+  user-select: none;
 }
 
-#draggable {
-  text-align: center;
-  background: white;
-}
-
-.dropzone {
-  width: 200px;
-  height: 20px;
-  background: blueviolet;
-  margin: 10px;
-  padding: 10px;
-}
-
-.dropzone.dragover {
-  background-color: purple;
-}
-
-.dragging {
-  opacity: 0.5;
-}
 
 
 #chessBoard {
-width : 900px;
-height : 900px;
-display : flex;
-flex-Wrap : wrap-reverse;
-margin-left: 12.5%;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  flex-Wrap: wrap-reverse;
+  margin-left: 12.5%;
 }
 
 
 .square {
-    width: 112.5px;
-    height: 112.5px;
-    position: relative;
-  }
+  width: 112.5px;
+  height: 112.5px;
+  position: relative;
+}
 
 .light-bg {
-    background-color: burlywood;
-  }
+  background-color: burlywood;
+}
 
 .dark-bg {
-    background-color: blanchedalmond;
-  }
- 
-   
-  .square:hover{
-    box-shadow:  0px 0px 30px 15px rgb(211, 255, 249) inset;
-  }
+  background-color: blanchedalmond;
+}
 
 
-  #a1,#a3,#a5,#a7,#c1,#e1,#g1{
+.square:hover {
+  box-shadow: 0px 0px 40px 5px rgb(211, 255, 249) inset;
+}
+
+
+#a1,
+#a3,
+#a5,
+#a7,
+#c1,
+#e1,
+#g1 {
   font-size: 250%;
-  color:blanchedalmond;
+  color: blanchedalmond;
   position: relative;
-  
-  }
 
-  #a2,#a4,#a6,#a8,#b1,#d1,#f1,#h1{
-    font-size: 250%;
-    color:burlywood;
-    position: relative;
-    }
-  
-button{
-  width:100%;
-  height:60px;
+}
+
+#a2,
+#a4,
+#a6,
+#a8,
+#b1,
+#d1,
+#f1,
+#h1 {
+  font-size: 250%;
+  color: burlywood;
+  position: relative;
+}
+
+button {
+  width: 100%;
+  height: 60px;
   color: blanchedalmond;
   background-color: burlywood;
   font-size: 150%;
@@ -79,16 +71,17 @@ button{
   margin-left: 2%;
 }
 
-button:hover{
+button:hover {
   background-color: rgb(124, 124, 124);
 }
 
-#timerBox{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+#timerBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
-#timerP1{
+
+#timerP1 {
   margin-left: auto;
   margin-right: 1%;
   margin-top: 1%;
@@ -98,10 +91,11 @@ button:hover{
   align-content: center;
   color: blanchedalmond;
   border: 10px;
-  border-style:outset;
-  border-color:burlywood;
+  border-style: outset;
+  border-color: burlywood;
 }
-#timerP2{
+
+#timerP2 {
   margin-left: 10%;
   margin-right: auto;
   margin-top: 1%;
@@ -111,61 +105,92 @@ button:hover{
   align-content: center;
   color: blanchedalmond;
   border: 10px;
-  border-style:outset;
-  border-color:burlywood;
+  border-style: outset;
+  border-color: burlywood;
 }
-#buttonBox{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    padding-bottom: 2.5%;
-    padding-top: 2.5%;
-    margin-left: auto;
-    margin: auto;
+
+#buttonBox {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  padding-bottom: 2.5%;
+  padding-top: 2.5%;
+  margin-left: auto;
+  margin: auto;
 }
 
 
-#moveTraceBox{
+#moveTraceBox {
   border: 10px;
   border-style: solid;
   border-radius: 15px;
   border-color: burlywood;
   width: 15%;
-  height: fit-content;
+  height: 800px;
   margin-left: 3%;
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(78, 78, 78);
   color: white;
   padding-left: 20px;
   padding-right: 20px;
-}
-#moveTraceboxTitle{
-margin-left: 28%;
+  overflow-y: scroll;
 }
 
-#movesInTraceBox{
+#moveTraceboxTitle {
+  margin-left: 28%;
+}
+
+#movesInTraceBox {
   font-size: large;
   display: flex;
   max-width: fit-content;
   flex-wrap: wrap;
 }
-#gameContainer{
+
+#gameContainer {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
-.chessPieces{
+.chessPieces {
   position: absolute;
   height: 100px;
   width: 100px;
-  left:13%;
-  bottom:1%;
-  
+  left: 13%;
+  bottom: 1%;
+
 }
 
-.dragover{
-  box-shadow:  0px 0px 30px 15px rgb(240, 255, 253) inset;
+.notAllowedToMove {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 13%;
+  bottom: 1%;
+
 }
 
-.priotize{
-  box-shadow:  0px 0px 30px 15px rgb(255, 59, 59) inset;
+.dragover {
+  box-shadow: 0px 0px 40px 5px rgb(163, 163, 163) inset;
+}
+
+.priotize {
+  box-shadow: 0px 0px 40px 5px rgb(255, 59, 59) inset;
+}
+
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white
+}
+
+.validMoves {
+  box-shadow: 0px 0px 40px 5px rgb(163, 163, 163) inset;
 }
